@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="8dp"
+    app:cardCornerRadius="16dp"
+    android:layout_margin="10dp"
+    app:strokeColor="#197D9F"
+    app:strokeWidth="2dip"
+    app:cardBackgroundColor="#FF1D9BC6"
+
+    >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/serviceName"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/workname"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-medium"
+            />
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:text="Waiting: "
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/ticketNo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ticket Number:"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-medium"/>
+        <TextView
+            android:id="@+id/wstatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ожидание:"
+            android:textColor="#ECE82C"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-medium"/>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:orientation="vertical"
+
+        >
+
+        <ImageView
+            android:id="@+id/removeItem"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="300dp"
+            android:background="@drawable/remove"
+            android:layout_marginTop="30dp"
+            app:icon="@drawable/remove" />
+
+
+
+    </LinearLayout>
+
+
+
+
+
+
+</com.google.android.material.card.MaterialCardView>

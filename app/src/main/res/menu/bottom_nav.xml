@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+    android:title="QR"
+    android:id="@+id/qrscanner"
+    android:icon="@drawable/code_scanner_24"
+    app:showAsAction="always"/>
+    <item
+        android:title="Билеты"
+        android:id="@+id/tickets"
+        android:icon="@drawable/feed_24"
+        app:showAsAction="always"/>
+    <item
+        android:title="Очередь"
+        android:id="@+id/stream"
+        android:icon="@drawable/ic_baseline_view_stream_24"
+        app:showAsAction="always"/>
+</menu>

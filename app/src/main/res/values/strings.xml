@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Final Cut</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="workname">WorkName</string>
+    <string name="qr">Пожалуйста, отсканируйте QR код</string>
+    <string name="numtick">№ Талона</string>
+</resources>
