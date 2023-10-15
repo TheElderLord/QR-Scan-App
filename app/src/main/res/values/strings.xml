@@ -5,4 +5,6 @@
     <string name="workname">WorkName</string>
     <string name="qr">Пожалуйста, отсканируйте QR код</string>
     <string name="numtick">№ Талона</string>
+    <string name="ratingThanks">Спасибо за оценку качества</string>
+    <string name="rateThanks">Спасибо за оценку!</string>
 </resources>

@@ -90,4 +90,20 @@
         app:layout_constraintTop_toBottomOf="@+id/cancel"
         app:srcCompat="@drawable/star_gray" />
 
+    <TextView
+        android:id="@+id/rateThx"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/rateThanks"
+        tools:layout_editor_absoluteX="175dp"
+        tools:layout_editor_absoluteY="634dp"
+        app:layout_constraintTop_toBottomOf="@id/rate"
+        android:layout_marginTop="50dp"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/green"
+        android:visibility="invisible"
+        />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

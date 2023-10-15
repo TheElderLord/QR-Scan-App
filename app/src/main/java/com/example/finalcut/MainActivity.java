@@ -77,12 +77,12 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         return false;
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-
-
-    }
+//    @Override
+//    protected void onDestroy() {
+//        super.onDestroy();
+//
+//
+//    }
 
     @Override
     protected void onResume() {

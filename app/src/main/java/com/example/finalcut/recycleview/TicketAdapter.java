@@ -133,8 +133,14 @@ public class TicketAdapter extends RecyclerView.Adapter<TicketAdapter.TicketHold
         topic = "nomad/"+ticket.getEventID();
         clientId = "Mobile";
         number = ticket.getTicketNumber();
-        client = new MqttAndroidClient(context, "tcp://"+ ScanFragment.IP +":1883",
-                clientId);
+        client =null;
+        try {
+            client = new MqttAndroidClient(context, "tcp://"+ ScanFragment.IP +":1883",
+                    clientId);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
         System.out.println(number);
 //        topic = "test/ticket";
 //        client = new MqttAndroidClient(context, "tcp://broker.hivemq.com:1883", clientId);
@@ -188,16 +194,22 @@ public class TicketAdapter extends RecyclerView.Adapter<TicketAdapter.TicketHold
 
             }
         }.start();
-        if (ticket.isCompleted()){
-            holder.remove.setImageResource(remove_active);
-            holder.status.setText("Завершено:Пожалуйста,поставьте оценку");
-            holder.status.setTextColor(Color.GREEN);
-            holder.time.setText("00:00");
+        try {
+
+
+            if (ticket.isCompleted()) {
+                holder.remove.setImageResource(remove_active);
+                holder.status.setText("Завершено:Пожалуйста,поставьте оценку");
+                holder.status.setTextColor(Color.GREEN);
+                holder.time.setText("00:00");
 //            notifyItemChanged(position);
 //            synchronized(this){
 //                notifyItemChanged(position);
 //            }
-            time.cancel();
+                time.cancel();
+            }
+        }catch (Exception e){
+            e.printStackTrace();
         }
 
     }

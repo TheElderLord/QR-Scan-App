@@ -17,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.finalcut.MainActivity;
 import com.example.finalcut.R;
 import com.example.finalcut.recycleview.TicketAdapter;
 
@@ -35,8 +36,10 @@ public class TicketInfoActivity extends AppCompatActivity {
     AlertDialog dialog;
     Button submit,serviceRate,delete;
     ImageView star1,star2,star3,star4,star5;
+
     static int rating;
     View view;
+
 
     @SuppressLint({"MissingInflatedId", "ResourceType"})
     @Override
@@ -49,6 +52,7 @@ public class TicketInfoActivity extends AppCompatActivity {
         serviceRate = findViewById(R.id.poprate);
         window =findViewById(R.id.window);
         operator=findViewById(R.id.operator);
+
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
@@ -106,6 +110,7 @@ public class TicketInfoActivity extends AppCompatActivity {
         star3 = view.findViewById(R.id.star3);
         star4 = view.findViewById(R.id.star4);
         star5 = view.findViewById(R.id.star5);
+        TextView rateText = view.findViewById(R.id.rateThx);
         popup.setView(view);
         dialog = popup.create();
         dialog.show();
@@ -176,13 +181,19 @@ public class TicketInfoActivity extends AppCompatActivity {
 
             }
         });
-         String url= "http://10.10.111.90:3857";
+         String url= "http://"+ ScanFragment.IP +":3857";
+         String branch = ScanFragment.BRANCH_ID;
+        System.out.println(url);
+        System.out.println(branch);
          submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                new RatingTask(url,"2111",eventID).execute();
+                rateText.setVisibility(View.VISIBLE);
+                new RatingTask(url,branch,eventID).execute();
+
                 Toast.makeText(view.getContext(),"Оценка "+rating,Toast.LENGTH_SHORT).show();
-                dialog.dismiss();
+//                dialog.dismiss();
+
             }
         });
     }
@@ -222,6 +233,7 @@ public class TicketInfoActivity extends AppCompatActivity {
                         "      </cus:NomadTerminalTicketRating_Input>\n" +
                         "   </soapenv:Body>\n" +
                         "</soapenv:Envelope>";
+                System.out.println(xml);
                 con.setDoOutput(true);
                 DataOutputStream wr = new DataOutputStream(con.getOutputStream());
                 wr.writeBytes(xml);
@@ -252,7 +264,7 @@ public class TicketInfoActivity extends AppCompatActivity {
             Log.d(TAG, String.valueOf(rating));
             System.out.println(rating);
             Toast.makeText(view.getContext(),"Ticket "+tnumber+" was rated by "+rating,Toast.LENGTH_SHORT).show();
-            System.out.println("Ticket "+tnumber+" was rated by "+rating);
+            System.out.println("Талон:"+tnumber+"\nОценка:"+rating);
 
 
         }

@@ -54,7 +54,7 @@ public class ScanFragment extends Fragment implements RecycleViewInterface {
     private  MyAdapter myAdapter;
     private  ArrayList<Ticket> recycleList = new ArrayList<>();
     private  String url; //= "http://10.10.111.90:3857";
-    private  String BRANCH_ID;// ="2111";
+    public static   String BRANCH_ID;// ="2111";
     private ImageView scanQR;
     public static String IP;
     Map<String, String> infoMap = new HashMap<String, String>();

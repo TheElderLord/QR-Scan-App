@@ -171,13 +171,13 @@ public class StreamFragment extends Fragment implements RecycleViewInterface {
         }
     }
 
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        try {
-            client.disconnect();
-        } catch (MqttException e) {
-            e.printStackTrace();
-        }
-    }
+//    @Override
+//    public void onDestroy() {
+//        super.onDestroy();
+//        try {
+//            client.disconnect();
+//        } catch (MqttException e) {
+//            e.printStackTrace();
+//        }
+//    }
 }
